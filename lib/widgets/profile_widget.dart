@@ -7,7 +7,7 @@ class ProfileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Padding(
-        padding: EdgeInsets.only(top: 30),
+        padding: EdgeInsets.only(top: 40),
         child: ClipOval(
           child: Image(
             image: AssetImage('assets/images/Joseph.jpg'),
