@@ -1,3 +1,4 @@
+import 'package:blogly/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import '../data/data.dart';
 
@@ -9,7 +10,15 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.person_2_rounded))
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ProfilePage(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.person_2_rounded))
         ],
         centerTitle: false,
         iconTheme: const IconThemeData(color: Colors.black),
@@ -25,25 +34,29 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                "Hello there,",
-                style: TextStyle(fontWeight: FontWeight.bold),
+              const Center(
+                child: Text(
+                  "What's up,",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              const Text(
-                "Welcome to the flutter class",
-                style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    color: Color.fromARGB(255, 105, 102, 102),
-                    fontSize: 16),
+              const Center(
+                child: Text(
+                  "Welcome to the flutter class",
+                  style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 105, 102, 102),
+                      fontSize: 16),
+                ),
               ),
               SizedBox(
                 height: 300,
                 width: double.infinity,
                 child: Image.network(
-                    "https://images.unsplash.com/photo-1686956222311-2e1bb5bb1b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60"),
+                    "https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"),
               ),
               const SizedBox(
                 height: 25,

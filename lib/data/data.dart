@@ -15,7 +15,7 @@ final List<Courses> courses = [
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit, lorem sit amet auctor porta, lectus quam pretium sem, sit amet lobortis sapien lectus fringilla ligula. Sed commodo, nisl eget condimentum consequat, risus erat ornare ipsum, a suscipit justo quam id massa. Etiam volutpat pellentesque justo, nec ultricies leo porttitor sed. Suspendisse auctor sem nunc, vitae faucibus enim rutrum eu. Aenean non rutrum nunc. Morbi non neque nulla. Nulla eu sodales odio, quis feugiat tortor. Ut at ipsum orci.",
     imageUrl:
-        "https://images.unsplash.com/photo-1686644823210-c9daf5003d57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1610433572201-110753c6cff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
   ),
   Courses(
     name: "Julius Nana",
