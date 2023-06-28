@@ -9,8 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
-              onPressed: () {}, icon: const Icon(Icons.notifications_outlined))
+          IconButton(onPressed: () {}, icon: const Icon(Icons.person_2_rounded))
         ],
         centerTitle: false,
         iconTheme: const IconThemeData(color: Colors.black),
