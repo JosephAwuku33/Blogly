@@ -1,4 +1,4 @@
-import 'package:blogly/pages/home_page.dart';
+import 'package:blogly/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -7,6 +7,6 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomePage());
+        debugShowCheckedModeBanner: false, home: SignUpPage());
   }
 }
