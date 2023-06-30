@@ -17,6 +17,8 @@ class _CustomFormState extends State<CustomForm> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
                 validator: (value) {
@@ -28,6 +30,38 @@ class _CustomFormState extends State<CustomForm> {
                     prefixIcon: Icon(Icons.account_circle),
                     labelText: "Name",
                     hintText: "Enter your full Name",
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.white),
+              ),
+              const SizedBox(height: 30),
+              TextFormField(
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Required field";
+                  }
+                },
+                keyboardType: TextInputType.emailAddress,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.email),
+                    labelText: "Email",
+                    hintText: "Enter your email address",
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.white),
+              ),
+              const SizedBox(height: 30),
+              TextFormField(
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Required field";
+                  }
+                },
+                keyboardType: TextInputType.visiblePassword,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.password),
+                    labelText: "Password",
+                    hintText: "Password",
                     border: OutlineInputBorder(),
                     filled: true,
                     fillColor: Colors.white),
