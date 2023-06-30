@@ -2,35 +2,35 @@ import "package:blogly/models/courses.dart";
 
 final List<Courses> courses = [
   Courses(
-    title: "Flutter Essentials",
-    name: "Kelvin Ansah",
+    title: "Artificial Intelligence and LLMs",
+    name: "Alan Turing",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit, lorem sit amet auctor porta, lectus quam pretium sem, sit amet lobortis sapien lectus fringilla ligula. Sed commodo, nisl eget condimentum consequat, risus erat ornare ipsum, a suscipit justo quam id massa. Etiam volutpat pellentesque justo, nec ultricies leo porttitor sed. Suspendisse auctor sem nunc, vitae faucibus enim rutrum eu. Aenean non rutrum nunc. Morbi non neque nulla. Nulla eu sodales odio, quis feugiat tortor. Ut at ipsum orci.",
     imageUrl:
-        "https://images.unsplash.com/photo-1683009427500-71296178737f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
+        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
   ),
   Courses(
-    title: "Java Essentials",
-    name: "Yenah Kwesi Kuadey",
+    title: "Java Programming",
+    name: "Programming with Mosh",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit, lorem sit amet auctor porta, lectus quam pretium sem, sit amet lobortis sapien lectus fringilla ligula. Sed commodo, nisl eget condimentum consequat, risus erat ornare ipsum, a suscipit justo quam id massa. Etiam volutpat pellentesque justo, nec ultricies leo porttitor sed. Suspendisse auctor sem nunc, vitae faucibus enim rutrum eu. Aenean non rutrum nunc. Morbi non neque nulla. Nulla eu sodales odio, quis feugiat tortor. Ut at ipsum orci.",
     imageUrl:
-        "https://images.unsplash.com/photo-1610433572201-110753c6cff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1618422168181-177d9d0a1fca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
   ),
   Courses(
-    name: "Julius Nana",
-    title: "Javascript Essentials",
+    name: "Central Tee",
+    title: "Game Development",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit, lorem sit amet auctor porta, lectus quam pretium sem, sit amet lobortis sapien lectus fringilla ligula. Sed commodo, nisl eget condimentum consequat, risus erat ornare ipsum, a suscipit justo quam id massa. Etiam volutpat pellentesque justo, nec ultricies leo porttitor sed. Suspendisse auctor sem nunc, vitae faucibus enim rutrum eu. Aenean non rutrum nunc. Morbi non neque nulla. Nulla eu sodales odio, quis feugiat tortor. Ut at ipsum orci.",
     imageUrl:
-        "https://images.unsplash.com/photo-1678875202921-1b4a5b3fcddb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+        "https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
   ),
   Courses(
-    name: "Kelvin Eduful",
-    title: "Photography Essentials",
+    name: "Justice Appatie",
+    title: "Web Scraping",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit, lorem sit amet auctor porta, lectus quam pretium sem, sit amet lobortis sapien lectus fringilla ligula. Sed commodo, nisl eget condimentum consequat, risus erat ornare ipsum, a suscipit justo quam id massa. Etiam volutpat pellentesque justo, nec ultricies leo porttitor sed. Suspendisse auctor sem nunc, vitae faucibus enim rutrum eu. Aenean non rutrum nunc. Morbi non neque nulla. Nulla eu sodales odio, quis feugiat tortor. Ut at ipsum orci.",
     imageUrl:
-        "https://images.unsplash.com/photo-1686739717775-1365c704d8b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
   ),
 ];

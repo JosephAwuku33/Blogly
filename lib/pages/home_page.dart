@@ -45,10 +45,11 @@ class HomePage extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  "Welcome to the flutter class",
+                  "Blogy, A minimal tech blog site on the go!!",
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: Color.fromARGB(255, 105, 102, 102),
+                      fontStyle: FontStyle.italic,
                       fontSize: 16),
                 ),
               ),
