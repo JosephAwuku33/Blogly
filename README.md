@@ -1,6 +1,6 @@
 # blogly
 
-A new Flutter project.
+A Custom Blog Project.
 
 ## Getting Started
 
