@@ -12,8 +12,35 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
-          ProfileWidget(
-            key: key,
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    minRadius: 35.0,
+                    child: Icon(
+                      Icons.call,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                  ),
+                  ProfileWidget(),
+                  CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    minRadius: 35.0,
+                    child: Icon(
+                      Icons.message,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                  )
+                ],
+              ),
+            ],
           ),
           buildName(userProfile[0])
         ],
