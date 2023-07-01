@@ -62,6 +62,7 @@ class _CustomFormState extends State<CustomForm> {
                   return null;
                 },
                 keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.password),
                     labelText: "Password",

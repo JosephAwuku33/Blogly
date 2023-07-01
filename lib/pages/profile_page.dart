@@ -1,5 +1,6 @@
 import 'package:blogly/models/user.dart';
 import 'package:blogly/widgets/profile_widget.dart';
+import 'package:blogly/widgets/ranking_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:blogly/data/profile_data.dart';
 
@@ -65,7 +66,21 @@ class ProfilePage extends StatelessWidget {
             height: 20,
             child:
                 Text(user.about, style: const TextStyle(color: Colors.black87)),
-          )
+          ),
+          const SizedBox(
+            height: 60,
+            child: RankingsWidget(),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
+            child: SizedBox(
+              height: 30,
+              child: Text(
+                "About",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+              ),
+            ),
+          ),
         ],
       );
 }
