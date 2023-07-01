@@ -1,4 +1,5 @@
 import 'package:blogly/pages/profile_page.dart';
+import 'package:blogly/pages/single_page_details.dart';
 import 'package:flutter/material.dart';
 import '../data/data.dart';
 
@@ -86,14 +87,13 @@ class HomePage extends StatelessWidget {
                       // Navigator.of(context).push();
                       // Navigator.of(context).pushReplacement();
                       // Navigator.of(context).pushReplacementNamed();
-                      /*Navigator.of(context).push(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => PageDetails(
+                          builder: (context) => SinglePageDetails(
                             courses: courses[index],
                           ),
                         ),
                       );
-                      */
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8),
