@@ -1,3 +1,4 @@
+import 'package:blogly/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomForm extends StatefulWidget {
@@ -25,6 +26,7 @@ class _CustomFormState extends State<CustomForm> {
                   if (value == null || value.isEmpty) {
                     return "Required field";
                   }
+                  return null;
                 },
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.account_circle),
@@ -40,6 +42,7 @@ class _CustomFormState extends State<CustomForm> {
                   if (value == null || value.isEmpty) {
                     return "Required field";
                   }
+                  return null;
                 },
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
@@ -56,6 +59,7 @@ class _CustomFormState extends State<CustomForm> {
                   if (value == null || value.isEmpty) {
                     return "Required field";
                   }
+                  return null;
                 },
                 keyboardType: TextInputType.visiblePassword,
                 decoration: const InputDecoration(
@@ -76,11 +80,13 @@ class _CustomFormState extends State<CustomForm> {
                 onPressed: () {
                   // Validate returns true if the form is valid, or false otherwise.
                   if (_formKey.currentState!.validate()) {
-                    // If the form is valid, display a snackbar. In the real world,
-                    // you'd often call a server or save the information in a database.
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processing Data')),
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
                     );
+                    //ScaffoldMessenger.of(context).showSnackBar(
+                    //const SnackBar(content: Text('Processing Data'))
                   }
                 },
                 child: const Icon(Icons.navigate_next),
