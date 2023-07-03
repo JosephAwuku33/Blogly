@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  "What's up,",
+                  "Welcome to Blogly",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
