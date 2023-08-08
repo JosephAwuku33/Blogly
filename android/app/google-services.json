@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "759774713477",
+    "project_id": "flutter-base-c1a3d",
+    "storage_bucket": "flutter-base-c1a3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759774713477:android:0f1753101de4f296e07bec",
+        "android_client_info": {
+          "package_name": "com.example.blogly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759774713477-i8jj8g7hm7iorqmssjjj9etbf85ih6ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTTGiy-MmXO0-d_t291hJOGoziY7ZeyxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759774713477-i8jj8g7hm7iorqmssjjj9etbf85ih6ls.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "759774713477-c9koofftjlpkhp4546hurrrpg9b6anq3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.springly"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759774713477:android:fc689719ab040842e07bec",
+        "android_client_info": {
+          "package_name": "com.example.springly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759774713477-i8jj8g7hm7iorqmssjjj9etbf85ih6ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTTGiy-MmXO0-d_t291hJOGoziY7ZeyxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759774713477-i8jj8g7hm7iorqmssjjj9etbf85ih6ls.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "759774713477-c9koofftjlpkhp4546hurrrpg9b6anq3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.springly"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
