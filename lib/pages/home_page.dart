@@ -1,7 +1,9 @@
 import 'package:blogly/pages/profile_page.dart';
 import 'package:blogly/pages/single_page_details.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../data/data.dart';
+import '../providers/theme_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,10 +22,17 @@ class HomePage extends StatelessWidget {
                   ),
                 );
               },
-              icon: const Icon(Icons.person_2_rounded))
+              icon: const Icon(Icons.person_2_rounded)),
+          Switch(
+            value: Provider.of<ThemeModel>(context).themeData.brightness ==
+                Brightness.light,
+            onChanged: (value) {
+              Provider.of<ThemeModel>(context, listen: false).toggleTheme();
+            },
+          )
         ],
         centerTitle: false,
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.white),
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),

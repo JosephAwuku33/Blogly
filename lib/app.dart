@@ -1,5 +1,5 @@
 import 'package:blogly/pages/signup_page.dart';
-import 'package:blogly/providers/theme_provider.dart.dart';
+import 'package:blogly/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,9 +8,16 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Provider(
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(
         create: (context) => ThemeModel(),
-        child: const MaterialApp(
-            debugShowCheckedModeBanner: false, home: SignUpPage()));
+        builder: ((context, child) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              home: const SignUpPage(),
+              theme: Provider.of<ThemeModel>(context).themeData);
+        }),
+      )
+    ]);
   }
 }
