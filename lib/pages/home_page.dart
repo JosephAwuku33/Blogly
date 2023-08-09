@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
           )
         ],
         centerTitle: false,
-        iconTheme: const IconThemeData(color: Colors.white),
+        //iconTheme: const IconThemeData(color: Colors.white),
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),

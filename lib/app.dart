@@ -1,4 +1,5 @@
-import 'package:blogly/pages/signup_page.dart';
+import 'package:blogly/firebase/authentication/navigation/app_settings.dart';
+//import 'package:blogly/pages/signup_page.dart';
 import 'package:blogly/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,7 @@ class App extends StatelessWidget {
         builder: ((context, child) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: const SignUpPage(),
+              home: const AppSettings(),
               theme: Provider.of<ThemeModel>(context).themeData);
         }),
       )

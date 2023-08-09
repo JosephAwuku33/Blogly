@@ -38,6 +38,8 @@ dependencies:
   firebase_core: ^2.15.0
   envied_flutter: ^0.3.0+1
   envied: ^0.3.0+3
+  firebase_auth: ^4.7.2
+  cloud_firestore: ^4.8.4
 
 dev_dependencies:
   flutter_test:

@@ -10,6 +10,21 @@ class CustomForm extends StatefulWidget {
 
 class _CustomFormState extends State<CustomForm> {
   final _formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +36,14 @@ class _CustomFormState extends State<CustomForm> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Center(
+                child: Text("Sign Up Page"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               TextFormField(
+                controller: nameController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Required field";
@@ -38,6 +60,7 @@ class _CustomFormState extends State<CustomForm> {
               ),
               const SizedBox(height: 30),
               TextFormField(
+                controller: nameController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Required field";
@@ -55,9 +78,13 @@ class _CustomFormState extends State<CustomForm> {
               ),
               const SizedBox(height: 30),
               TextFormField(
+                controller: passwordController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Required field";
+                  }
+                  if (value.length < 8) {
+                    return "Password not strong";
                   }
                   return null;
                 },
@@ -67,6 +94,30 @@ class _CustomFormState extends State<CustomForm> {
                     prefixIcon: Icon(Icons.password),
                     labelText: "Password",
                     hintText: "Password",
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.white),
+              ),
+              const SizedBox(height: 30),
+              TextFormField(
+                controller: confirmPasswordController,
+                validator: (value) {
+                  String confirmPassword = confirmPasswordController.text;
+                  String password = passwordController.text;
+                  if (value == null || value.isEmpty) {
+                    return "Required field";
+                  }
+                  if (confirmPassword != password) {
+                    return "Passwords do not match";
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.password),
+                    labelText: "Confirm Password",
+                    hintText: "Confirm Password",
                     border: OutlineInputBorder(),
                     filled: true,
                     fillColor: Colors.white),
