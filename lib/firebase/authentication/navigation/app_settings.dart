@@ -19,7 +19,7 @@ class _AppSettingsState extends State<AppSettings> {
           stream: auth.onAuthStateChange(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return const HomePage();
+              return HomePage();
             }
             return const Login();
           }),

@@ -1,8 +1,9 @@
+import 'package:blogly/providers/courses_provider.dart';
 import 'package:blogly/pages/profile_page.dart';
 import 'package:blogly/pages/single_page_details.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../data/data.dart';
+
 import '../providers/theme_provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,6 +11,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final coursesProvider =
+        Provider.of<CoursesProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -84,64 +87,78 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              ListView.builder(
-                shrinkWrap: true,
-                padding: const EdgeInsets.only(top: 15, bottom: 15),
-                physics: const ScrollPhysics(),
-                itemCount: courses.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).pop();
-                      // Navigator.of(context).pushNamed();
-                      // Navigator.of(context).push();
-                      // Navigator.of(context).pushReplacement();
-                      // Navigator.of(context).pushReplacementNamed();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => SinglePageDetails(
-                            courses: courses[index],
-                          ),
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 250,
-                            width: MediaQuery.of(context).size.width,
-                            child: Image.network(
-                              courses[index].imageUrl,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            courses[index].title,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            courses[index].name,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
+              FutureBuilder<void>(
+                  future: coursesProvider.loadCourses(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const CircularProgressIndicator(); // Show a loading indicator
+                    } else if (snapshot.hasError) {
+                      return const Text('Error loading courses');
+                    } else {
+                      return Consumer<CoursesProvider>(
+                          builder: (context, coursesProvider, _) {
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          padding: const EdgeInsets.only(top: 15, bottom: 15),
+                          physics: const ScrollPhysics(),
+                          itemCount: coursesProvider.courses.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                // Navigator.of(context).pop();
+                                // Navigator.of(context).pushNamed();
+                                // Navigator.of(context).push();
+                                // Navigator.of(context).pushReplacement();
+                                // Navigator.of(context).pushReplacementNamed();
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => SinglePageDetails(
+                                      courses: coursesProvider.courses[index],
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 8.0, bottom: 8),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 250,
+                                      width: MediaQuery.of(context).size.width,
+                                      child: Image.network(
+                                        coursesProvider.courses[index].imageUrl,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Text(
+                                      coursesProvider.courses[index].title,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Text(
+                                      coursesProvider.courses[index].name,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      });
+                    }
+                  }),
             ],
           ),
         ),

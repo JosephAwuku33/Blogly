@@ -1,5 +1,6 @@
 import 'package:blogly/firebase/authentication/navigation/app_settings.dart';
 import 'package:blogly/firebase/authentication/provider/auth_provider.dart';
+import 'package:blogly/providers/courses_provider.dart';
 //import 'package:blogly/pages/signup_page.dart';
 import 'package:blogly/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => AuthProvider()),
+      ChangeNotifierProvider(create: (context) => CoursesProvider()),
       ChangeNotifierProvider(
         create: (context) => ThemeModel(),
         builder: ((context, child) {
