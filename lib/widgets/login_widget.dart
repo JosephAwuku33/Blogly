@@ -1,4 +1,5 @@
 import 'package:blogly/pages/home_page.dart';
+import 'package:blogly/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:blogly/firebase/authentication/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
@@ -112,9 +113,29 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                     borderRadius: BorderRadius.circular(60),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  loginUser();
+                },
                 child: const Icon(Icons.navigate_next),
               ),
+              const SizedBox(
+                height: 40,
+              ),
+              Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          fullscreenDialog: true,
+                          builder: (context) => const SignUpPage()),
+                    );
+                  },
+                  child: const Text(
+                    "Don't have an account? Register",
+                    style: TextStyle(color: Colors.redAccent),
+                  ),
+                ),
+              )
             ],
           ),
         ));

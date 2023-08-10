@@ -1,5 +1,7 @@
 import 'package:blogly/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:blogly/firebase/authentication/provider/auth_provider.dart';
 
 class CustomForm extends StatefulWidget {
   const CustomForm({super.key});
@@ -14,6 +16,34 @@ class _CustomFormState extends State<CustomForm> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+
+  Future<void> register() async {
+    try {
+      if (_formKey.currentState!.validate()) {
+        _formKey.currentState!.save();
+        await Provider.of<AuthProvider>(context, listen: false).register(
+          nameController.text,
+          emailController.text,
+          passwordController.text,
+        );
+        if (mounted) {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const HomePage(),
+            ),
+          );
+        }
+      }
+    } catch (err) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            err.toString(),
+          ),
+        ),
+      );
+    }
+  }
 
   @override
   void dispose() {
@@ -60,7 +90,7 @@ class _CustomFormState extends State<CustomForm> {
               ),
               const SizedBox(height: 30),
               TextFormField(
-                controller: nameController,
+                controller: emailController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Required field";
@@ -131,15 +161,8 @@ class _CustomFormState extends State<CustomForm> {
                 ),
                 onPressed: () {
                   // Validate returns true if the form is valid, or false otherwise.
-                  if (_formKey.currentState!.validate()) {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                    //ScaffoldMessenger.of(context).showSnackBar(
-                    //const SnackBar(content: Text('Processing Data'))
-                  }
+
+                  register();
                 },
                 child: const Icon(Icons.navigate_next),
               ),
